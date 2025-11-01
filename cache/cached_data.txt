@@ -1,0 +1,12 @@
+Follower data:  16
+Follower Time:  0.5681996150015038
+Star data:  9
+Star Time 1.0955120010003156
+Repo Data 63
+Repo Time 1.0750708500017936
+Contrib Data 70
+Contrib Time:  1.1109555420007382
+Total loc:  [10453243, 1527780, 8925463, False]
+Loc time:  752.0262704810011
+Commit data:  501
+Commit time:  0.005093219999253051
