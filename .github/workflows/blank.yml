@@ -1,6 +1,6 @@
 name: Github Readme Creater Workflow
 
-on: workflow_dispatch # manually Trigger
+on: workflow_dispatch # [workflow_dispatch, repository_dispatch, schedule, workflow_call]
 
 jobs: 
   first-job: 
