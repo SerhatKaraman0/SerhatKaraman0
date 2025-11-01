@@ -17,6 +17,7 @@ jobs:
       - name: Install the project
         run: uv sync --locked --all-extras --dev
       - name: Cache
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/cache/requirements.txt') }}
