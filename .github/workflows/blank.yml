@@ -24,6 +24,4 @@ jobs:
           author_name: Your Name
           author_email: mail@example.com
           message: 'Your commit message'
-          add:
-            - main.py
-            - Readme.md
+          add: "main.py README.md"
