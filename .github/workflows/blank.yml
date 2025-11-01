@@ -1,0 +1,15 @@
+name: Github Readme Creater Workflow
+
+on: workflow_dispatch # manually Trigger
+
+jobs: 
+  first-job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "hello"
+      - name: Print ByeBye
+        run: echo "bye bye"
+
+
+
