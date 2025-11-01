@@ -1,6 +1,6 @@
 name: Github Readme Creater Workflow
 
-on: push # [workflow_dispatch, repository_dispatch, schedule, workflow_call]
+on: workflow_dispatch # [workflow_dispatch, repository_dispatch, schedule, workflow_call]
 
 jobs: 
   first-job: 
@@ -18,6 +18,12 @@ jobs:
         run: uv sync --locked --all-extras --dev
       - name: run Python file
         run: uv run main.py
-        
-
-
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Your Name
+          author_email: mail@example.com
+          message: 'Your commit message'
+          add:
+            - main.py
+            - Readme.md
