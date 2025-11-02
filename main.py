@@ -3,7 +3,10 @@ import requests
 from datetime import datetime
 import time
 import hashlib
+import formatter
+from dotenv import load_dotenv
 
+load_dotenv()
 
 HEADERS = {'authorization': 'token '+ os.environ['ACCESS_TOKEN']}
 USER_NAME = os.environ['USER_NAME']
@@ -358,6 +361,8 @@ def update_readme(follower_data, star_data, repo_data, contrib_data, total_loc, 
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(content)
 
+
+
 def main():
     global OWNER_ID
     
@@ -383,6 +388,8 @@ def main():
     print("Loc time: ", loc_time)
     print("Commit data: ", commit_data)
     print("Commit time: ", commit_time) 
+
+
 
     update_readme(follower_data, star_data, repo_data, contrib_data, total_loc, commit_data)
     
