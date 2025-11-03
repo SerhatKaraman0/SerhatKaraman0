@@ -1,6 +1,9 @@
 name: Github Readme Creater Workflow
 
-on: workflow_dispatch # [workflow_dispatch, repository_dispatch, schedule, workflow_call]
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 0 * * *' # daily at 00:00 UTC
 
 permissions:
   contents: write
@@ -8,6 +11,9 @@ permissions:
 jobs: 
   first-job: 
     runs-on: ubuntu-latest
+    concurrency:
+      group: profile-readme-daily
+      cancel-in-progress: false
     steps:
       - name: Get Code 
         uses: actions/checkout@v5
