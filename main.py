@@ -403,35 +403,60 @@ def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib
     # Embed GIF as data URI if present
     try:
         gif_elem = root.find(".//*[@id='profile_gif']")
-        if gif_elem is not None:
-            import glob, base64, random
-            # Prefer explicit path, else first *.gif under gifs/
-            candidate = gif_elem.attrib.get('href') or gif_elem.attrib.get('{http://www.w3.org/1999/xlink}href')
+        import glob, base64, random
+        # Determine preferred image: ascii-art.png (in root or gifs/), else fallback random gif
+        preferred_paths = ['ascii-art.png', 'gifs/ascii-art.png', 'assets/ascii-art.png']
+        candidate = None
+        for p in preferred_paths:
+            if os.path.exists(p):
+                candidate = p
+                break
+        if candidate is None:
+            # fallback to existing href or random gif
+            if gif_elem is not None:
+                candidate = gif_elem.attrib.get('href') or gif_elem.attrib.get('{http://www.w3.org/1999/xlink}href')
             if not candidate or not os.path.exists(candidate):
-                matches = glob.glob('gifs/*.gif')
-                candidate = random.choice(matches) if matches else None
-            if candidate and os.path.exists(candidate):
-                with open(candidate, 'rb') as gf:
-                    b64 = base64.b64encode(gf.read()).decode('ascii')
-                data_uri = f"data:image/gif;base64,{b64}"
-                # Set both namespaced and non-namespaced hrefs for maximum compatibility
-                gif_elem.set('{http://www.w3.org/1999/xlink}href', data_uri)
-                gif_elem.set('href', data_uri)
-                # Ensure it fits inside the container and is clipped to rounded corners
-                gif_elem.set('x', '15')
-                gif_elem.set('y', '15')
-                gif_elem.set('width', '360')
-                gif_elem.set('height', '850')
-                gif_elem.set('preserveAspectRatio', 'xMidYMid meet')
-                # Ensure clipPath exists
-                defs = root.find('.//{http://www.w3.org/2000/svg}defs')
-                if defs is None:
-                    defs = etree.SubElement(root, '{http://www.w3.org/2000/svg}defs')
-                clip = root.find(".//*[@id='gif_clip']")
-                if clip is None:
-                    clip = etree.SubElement(defs, '{http://www.w3.org/2000/svg}clipPath', attrib={'id': 'gif_clip'})
-                    etree.SubElement(clip, '{http://www.w3.org/2000/svg}rect', attrib={'x': '15', 'y': '15', 'width': '360', 'height': '850', 'rx': '10'})
-                gif_elem.set('clip-path', 'url(#gif_clip)')
+                gif_matches = glob.glob('gifs/*.gif')
+                candidate = random.choice(gif_matches) if gif_matches else None
+
+        if candidate and os.path.exists(candidate):
+            # Ensure an <image> element exists; create if missing and place after the left panel rect
+            if gif_elem is None:
+                gif_elem = etree.Element('{http://www.w3.org/2000/svg}image', attrib={'id': 'profile_gif'})
+                # Insert after the first left-panel rect
+                children = list(root)
+                insert_idx = 0
+                for idx, child in enumerate(children):
+                    if child.tag.endswith('rect') and child.attrib.get('x') == '15' and child.attrib.get('y') == '15' and child.attrib.get('width') == '360' and child.attrib.get('height') == '850':
+                        insert_idx = idx + 1
+                        break
+                root.insert(insert_idx, gif_elem)
+
+            # Encode image as data URI (png or gif)
+            ext = os.path.splitext(candidate)[1].lower()
+            mime = 'image/png' if ext == '.png' else 'image/gif'
+            with open(candidate, 'rb') as imf:
+                b64 = base64.b64encode(imf.read()).decode('ascii')
+            data_uri = f"data:{mime};base64,{b64}"
+
+            # Set hrefs
+            gif_elem.set('{http://www.w3.org/1999/xlink}href', data_uri)
+            gif_elem.set('href', data_uri)
+            # Ensure it fits inside the container and is clipped to rounded corners
+            gif_elem.set('x', '15')
+            gif_elem.set('y', '15')
+            gif_elem.set('width', '360')
+            gif_elem.set('height', '850')
+            gif_elem.set('preserveAspectRatio', 'xMidYMid meet')
+            # Ensure clipPath exists
+            defs = root.find('.//{http://www.w3.org/2000/svg}defs')
+            if defs is None:
+                defs = etree.SubElement(root, '{http://www.w3.org/2000/svg}defs')
+            clip = root.find(".//*[@id='gif_clip']")
+            if clip is None:
+                clip = etree.SubElement(defs, '{http://www.w3.org/2000/svg}clipPath', attrib={'id': 'gif_clip'})
+                etree.SubElement(clip, '{http://www.w3.org/2000/svg}rect', attrib={'x': '15', 'y': '15', 'width': '360', 'height': '850', 'rx': '10'})
+            gif_elem.set('clip-path', 'url(#gif_clip)')
     except Exception:
         pass
 
