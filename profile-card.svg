@@ -14,10 +14,10 @@ size-adjust: 109%;
 .cc {fill: #616e7f;}
 text, tspan {white-space: pre;}
 </style>
-<rect width="985px" height="780px" fill="#161b22" rx="15"/>
+<rect width="985px" height="850px" fill="#161b22" rx="15"/>
 
 <!-- Placeholder for GIF -->
-<rect x="15" y="15" width="360" height="750" fill="#0d1117" rx="10"/>
+<rect x="15" y="15" width="360" height="850" fill="#0d1117" rx="10"/>
 <text x="195" y="385" fill="#616e7f" text-anchor="middle" font-size="14">
 <tspan x="195" y="375">[GIF Placeholder]</tspan>
 <tspan x="195" y="395">Your animated GIF</tspan>
@@ -156,6 +156,10 @@ text, tspan {white-space: pre;}
 <tspan x="970" y="730" text-anchor="end"><tspan class="value">173 commits (+686.4%)</tspan></tspan>
 
 <tspan x="390" y="750"><tspan class="cc">. </tspan><tspan class="value">2025</tspan>:<tspan class="cc"> ........................... </tspan></tspan>
-<tspan x="960" y="750" text-anchor="end"><tspan class="value">332 commits (+91.9%)</tspan></tspan>
+<tspan x="970" y="750" text-anchor="end"><tspan class="value">332 commits (+91.9%)</tspan></tspan>
+
+<tspan x="390" y="770"><tspan class="cc">. </tspan><tspan class="value">Credits</tspan>:<tspan class="cc"> ........................ </tspan></tspan>
+<tspan x="990" y="770" text-anchor="end"><tspan class="value">           AndrewKGrant6</tspan></tspan>
+  
 </text>
 </svg>
