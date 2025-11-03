@@ -4,7 +4,6 @@ from datetime import datetime
 import time
 import hashlib
 import xml.etree.ElementTree as etree
-import formatter
 from dotenv import load_dotenv
 
 load_dotenv()
