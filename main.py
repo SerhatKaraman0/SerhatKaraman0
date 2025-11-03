@@ -3,6 +3,7 @@ import requests
 from datetime import datetime
 import time
 import hashlib
+import xml.etree.ElementTree as etree
 import formatter
 from dotenv import load_dotenv
 
@@ -363,6 +364,170 @@ def update_readme(follower_data, star_data, repo_data, contrib_data, total_loc, 
 
 
 
+def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data, user_created_at=None):
+    """
+    Parse SVG and update elements with commits, stars, repositories, followers, and LOC.
+    Uses XML parsing to avoid corrupting layout and adds dot justification.
+    """
+    tree = etree.parse(filename)
+    root = tree.getroot()
+
+    justify_format(root, 'commit_data', commit_data, 22)
+    justify_format(root, 'star_data', star_data, 14)
+    justify_format(root, 'repo_data', repo_data, 6)
+    justify_format(root, 'contrib_data', contrib_data)
+    justify_format(root, 'follower_data', follower_data, 10)
+
+    # loc_data is expected [add, del, net, cached?]
+    try:
+        loc_add = loc_data[0]
+        loc_del = loc_data[1]
+        loc_net = loc_data[2]
+    except Exception:
+        loc_add = loc_del = loc_net = 0
+
+    justify_format(root, 'loc_data', loc_net, 9)
+    justify_format(root, 'loc_add', loc_add)
+    justify_format(root, 'loc_del', loc_del, 7)
+
+    # Uptime / Age line
+    if age_data is not None:
+        find_and_replace(root, 'uptime_data', age_data)
+
+    # ------------------------------------------------------------
+    # Extended sections: Productivity, Streaks, Yearly Trend
+    # ------------------------------------------------------------
+    # Embed GIF as data URI if present
+    try:
+        gif_elem = root.find(".//*[@id='profile_gif']")
+        if gif_elem is not None:
+            import glob, base64, random
+            # Prefer explicit path, else first *.gif under gifs/
+            candidate = gif_elem.attrib.get('href') or gif_elem.attrib.get('{http://www.w3.org/1999/xlink}href')
+            if not candidate or not os.path.exists(candidate):
+                matches = glob.glob('gifs/*.gif')
+                candidate = random.choice(matches) if matches else None
+            if candidate and os.path.exists(candidate):
+                with open(candidate, 'rb') as gf:
+                    b64 = base64.b64encode(gf.read()).decode('ascii')
+                data_uri = f"data:image/gif;base64,{b64}"
+                # Set both namespaced and non-namespaced hrefs for maximum compatibility
+                gif_elem.set('{http://www.w3.org/1999/xlink}href', data_uri)
+                gif_elem.set('href', data_uri)
+                # Ensure it fits inside the container and is clipped to rounded corners
+                gif_elem.set('x', '15')
+                gif_elem.set('y', '15')
+                gif_elem.set('width', '360')
+                gif_elem.set('height', '850')
+                gif_elem.set('preserveAspectRatio', 'xMidYMid meet')
+                # Ensure clipPath exists
+                defs = root.find('.//{http://www.w3.org/2000/svg}defs')
+                if defs is None:
+                    defs = etree.SubElement(root, '{http://www.w3.org/2000/svg}defs')
+                clip = root.find(".//*[@id='gif_clip']")
+                if clip is None:
+                    clip = etree.SubElement(defs, '{http://www.w3.org/2000/svg}clipPath', attrib={'id': 'gif_clip'})
+                    etree.SubElement(clip, '{http://www.w3.org/2000/svg}rect', attrib={'x': '15', 'y': '15', 'width': '360', 'height': '850', 'rx': '10'})
+                gif_elem.set('clip-path', 'url(#gif_clip)')
+    except Exception:
+        pass
+
+    try:
+        from extra_feature import analyze_productive_times, get_streak_and_average, get_yearly_contribution_trend
+
+        # Productivity Insights
+        from datetime import datetime
+        start_of_year = datetime(datetime.now().year, 1, 1).isoformat() + 'Z'
+        today_iso = datetime.now().isoformat() + 'Z'
+
+        # Query contribution days for productivity
+        query = '''
+        query($login: String!, $from: DateTime!, $to: DateTime!) {
+            user(login: $login) {
+                contributionsCollection(from: $from, to: $to) {
+                    contributionCalendar {
+                        weeks { contributionDays { date contributionCount } }
+                    }
+                }
+            }
+        }'''
+        variables = {'login': USER_NAME, 'from': start_of_year, 'to': today_iso}
+        req = request_maker('svg_overwrite_days', query, variables)
+        weeks = req.json()['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+        all_days = []
+        for week in weeks:
+            all_days.extend(week['contributionDays'])
+
+        productivity = analyze_productive_times(all_days)
+        most = productivity['most_productive_day']
+        least = productivity['least_productive_day']
+        justify_format(root, 'most_productive', f"{most['name']} ({most['average']} avg)")
+        justify_format(root, 'least_productive', f"{least['name']} ({least['average']} avg)")
+
+        weekday_ids = {
+            0: 'monday_avg', 1: 'tuesday_avg', 2: 'wednesday_avg',
+            3: 'thursday_avg', 4: 'friday_avg', 5: 'saturday_avg', 6: 'sunday_avg'
+        }
+        for day_num, elem_id in weekday_ids.items():
+            avg = productivity['weekday_stats'][day_num]['average']
+            justify_format(root, elem_id, f"{avg} avg")
+
+        # Contribution Streaks
+        streaks = get_streak_and_average(USER_NAME, start_of_year, today_iso)
+        justify_format(root, 'current_streak', f"{streaks['current_streak']} days")
+        justify_format(root, 'longest_streak', f"{streaks['longest_streak']} days")
+        justify_format(root, 'average_per_day', f"{streaks['average_per_day']}")
+        justify_format(root, 'total_contributions', f"{streaks['total_contributions']}")
+
+        # Yearly Contribution Trend
+        if user_created_at is not None:
+            yearly = get_yearly_contribution_trend(USER_NAME, user_created_at)
+            for y in yearly:
+                year_id = f"year_{y['year']}"
+                contributions = y['contributions']
+                growth = y.get('growth')
+                if growth is None:
+                    value = f"{contributions} commits"
+                else:
+                    sign = '+' if growth > 0 else ('-' if growth < 0 else '±')
+                    value = f"{contributions} commits ({sign}{abs(growth)}%)"
+                find_and_replace(root, year_id, value)
+    except Exception:
+        # Leave sections untouched if data fetch fails
+        pass
+
+    tree.write(filename, encoding='utf-8', xml_declaration=True)
+
+
+def justify_format(root, element_id, new_text, length=0):
+    """
+    Update element text and adjust preceding dots span to keep right alignment.
+    """
+    if isinstance(new_text, int):
+        new_text = f"{'{:,}'.format(new_text)}"
+    new_text = str(new_text)
+
+    find_and_replace(root, element_id, new_text)
+
+    just_len = max(0, length - len(new_text))
+    if just_len <= 2:
+        dot_map = {0: '', 1: ' ', 2: '. '}
+        dot_string = dot_map[just_len]
+    else:
+        dot_string = ' ' + ('.' * just_len) + ' '
+
+    find_and_replace(root, f"{element_id}_dots", dot_string)
+
+
+def find_and_replace(root, element_id, new_text):
+    """
+    Find the element in the SVG by id and replace its text.
+    """
+    element = root.find(f".//*[@id='{element_id}']")
+    if element is not None:
+        element.text = str(new_text)
+
+
 def main():
     global OWNER_ID
     
@@ -389,9 +554,29 @@ def main():
     print("Commit data: ", commit_data)
     print("Commit time: ", commit_time) 
 
+    # Compute age (uptime) from fixed DOB: June 7, 2003
+    from datetime import date
+    dob = date(2003, 6, 7)
+    today = date.today()
+    years = today.year - dob.year - (1 if (today.month, today.day) < (dob.month, dob.day) else 0)
+    last_birthday_year = today.year if (today.month, today.day) >= (dob.month, dob.day) else today.year - 1
+    from datetime import date as _date
+    last_birthday = _date(last_birthday_year, dob.month, dob.day)
+    days = (today - last_birthday).days
+    age_str = f"{years} years, {days} days"
 
+    svg_overwrite(
+        filename='profile-card.svg',
+        age_data=age_str,
+        commit_data=commit_data,
+        star_data=star_data,
+        repo_data=repo_data,
+        contrib_data=contrib_data,
+        follower_data=follower_data,
+        loc_data=total_loc,
+        user_created_at=acc_date,
+    )
 
-    update_readme(follower_data, star_data, repo_data, contrib_data, total_loc, commit_data)
     
 if __name__ == "__main__":
     main()
