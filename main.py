@@ -8,6 +8,9 @@ import formatter
 from dotenv import load_dotenv
 
 load_dotenv()
+# Ensure SVGs are written with standard namespaces (no ns0 prefix)
+etree.register_namespace('', 'http://www.w3.org/2000/svg')
+etree.register_namespace('xlink', 'http://www.w3.org/1999/xlink')
 
 HEADERS = {'authorization': 'token '+ os.environ['ACCESS_TOKEN']}
 USER_NAME = os.environ['USER_NAME']
@@ -364,7 +367,7 @@ def update_readme(follower_data, star_data, repo_data, contrib_data, total_loc, 
 
 
 
-def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data, user_created_at=None):
+def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data, user_created_at=None, make_github_safe=True):
     """
     Parse SVG and update elements with commits, stars, repositories, followers, and LOC.
     Uses XML parsing to avoid corrupting layout and adds dot justification.
@@ -497,6 +500,30 @@ def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib
         pass
 
     tree.write(filename, encoding='utf-8', xml_declaration=True)
+
+    # Optionally create a GitHub-safe copy without embedded <image> (blocked by GitHub sanitizer)
+    if make_github_safe:
+        try:
+            safe_tree = etree.parse(filename)
+            safe_root = safe_tree.getroot()
+            # Remove all image elements (esp. embedded data URIs)
+            for elem in list(safe_root.iter()):
+                if elem.tag.endswith('image'):
+                    parent = elem.getparent() if hasattr(elem, 'getparent') else None
+                    # xml.etree.ElementTree lacks getparent; fallback to rebuild
+            # Fallback: rebuild tree without <image> by searching recursively
+            def remove_images(node):
+                to_remove = [child for child in list(node) if child.tag.endswith('image')]
+                for child in to_remove:
+                    node.remove(child)
+                for child in list(node):
+                    remove_images(child)
+            remove_images(safe_root)
+
+            github_filename = filename.replace('.svg', '-github.svg')
+            safe_tree.write(github_filename, encoding='utf-8', xml_declaration=True)
+        except Exception:
+            pass
 
 
 def justify_format(root, element_id, new_text, length=0):
