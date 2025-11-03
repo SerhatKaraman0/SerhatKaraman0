@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="780px" font-size="16px">
+<style>
+@font-face {
+src: local('Consolas'), local('Consolas Bold');
+font-family: 'ConsolasFallback';
+font-display: swap;
+-webkit-size-adjust: 109%;
+size-adjust: 109%;
+}
+.key {fill: #ffa657;}
+.value {fill: #a5d6ff;}
+.addColor {fill: #3fb950;}
+.delColor {fill: #f85149;}
+.cc {fill: #616e7f;}
+text, tspan {white-space: pre;}
+</style>
+<rect width="985px" height="780px" fill="#161b22" rx="15"/>
+
+<!-- Placeholder for GIF -->
+<rect x="15" y="15" width="360" height="750" fill="#0d1117" rx="10"/>
+<text x="195" y="385" fill="#616e7f" text-anchor="middle" font-size="14">
+<tspan x="195" y="375">[GIF Placeholder]</tspan>
+<tspan x="195" y="395">Your animated GIF</tspan>
+<tspan x="195" y="415">will go here</tspan>
+</text>
+
+<!-- Profile Info - Header -->
+<text x="390" y="30" fill="#c9d1d9">
+<tspan x="390">serhat@karaman</tspan>
+</text>
+<text x="970" y="30" fill="#c9d1d9" text-anchor="end">
+<tspan x="970">——————————————————————————-—-</tspan>
+</text>
+
+<!-- Profile Info - Content Lines -->
+<text fill="#c9d1d9">
+<tspan x="390" y="50"><tspan class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ............................................................................................................... </tspan></tspan>
+<tspan x="970" y="50" text-anchor="end"><tspan class="value">Arch Linux, Windows</tspan></tspan>
+
+<tspan x="390" y="70"><tspan class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ............................................................................................................................... </tspan></tspan>
+<tspan x="970" y="70" text-anchor="end"><tspan class="value" id="location_data">Turkey</tspan></tspan>
+
+<tspan x="390" y="90"><tspan class="cc">. </tspan><tspan class="key">Role</tspan>:<tspan class="cc"> .............................................................................................................. </tspan></tspan>
+<tspan x="970" y="90" text-anchor="end"><tspan class="value">Software Developer</tspan></tspan>
+
+<tspan x="390" y="110"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ...................................................................................................................... </tspan></tspan>
+<tspan x="970" y="110" text-anchor="end"><tspan class="value">VSCode, Neovim</tspan></tspan>
+
+<tspan x="390" y="130"><tspan class="cc">. </tspan></tspan>
+
+<tspan x="390" y="150"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key"> Programming</tspan>:<tspan class="cc"> ................................................................. </tspan></tspan>
+<tspan x="970" y="150" text-anchor="end"><tspan class="value">Python, JavaScript, C</tspan></tspan>
+
+<tspan x="390" y="170"><tspan class="cc">. </tspan><tspan class="key">Technologies</tspan>:<tspan class="cc"> ... </tspan></tspan>
+<tspan x="970" y="170" text-anchor="end"><tspan class="value">GraphQL, GitHub Actions, Git, REST APIs</tspan></tspan>
+
+<tspan x="390" y="190"><tspan class="cc">. </tspan></tspan>
+
+<tspan x="390" y="210"><tspan class="cc">. </tspan><tspan class="key">Current</tspan>.<tspan class="key">Focus</tspan>:<tspan class="cc"> ................. </tspan></tspan>
+<tspan x="970" y="210" text-anchor="end"><tspan class="value">GitHub Profile Analytics</tspan></tspan>
+
+<tspan x="390" y="230"><tspan class="cc">. </tspan><tspan class="key">Interests</tspan>:<tspan class="cc"> ................. </tspan></tspan>
+<tspan x="970" y="230" text-anchor="end"><tspan class="value">Data Visualization, Automation</tspan></tspan>
+
+<tspan x="390" y="250"><tspan class="cc">. </tspan><tspan class="key">Top Languages</tspan>:<tspan class="cc"> ............. </tspan></tspan>
+<tspan x="970" y="250" text-anchor="end"></tspan>
+
+<tspan x="596" y="270"><tspan class="cc"><tspan class="value">Python (70.4%), Jupyter Notebook (27.5%), C (0.6%)</tspan></tspan></tspan>
+</text>
+
+<!-- Productivity Insights Section -->
+<text x="390" y="290" fill="#c9d1d9">
+<tspan x="390">- Productivity Insights</tspan>
+</text>
+<text x="970" y="290" fill="#c9d1d9" text-anchor="end">
+<tspan x="970">————————————————————————-—-</tspan>
+</text>
+
+<text fill="#c9d1d9">
+<tspan x="390" y="310"><tspan class="cc">. </tspan><tspan class="key">Most productive</tspan>:<tspan class="cc"> .................................................................................. </tspan></tspan>
+<tspan x="970" y="310" text-anchor="end"><tspan class="value">Friday (1.48 avg)</tspan></tspan>
+
+<tspan x="390" y="330"><tspan class="cc">. </tspan><tspan class="key">Least productive</tspan>:<tspan class="cc"> .................................................................................. </tspan></tspan>
+<tspan x="970" y="330" text-anchor="end"><tspan class="value">Sunday (0.68 avg)</tspan></tspan>
+
+<tspan x="390" y="350"><tspan class="cc">. </tspan><tspan class="key">Weekly breakdown</tspan>:<tspan class="cc"></tspan></tspan>
+
+<tspan x="390" y="370"><tspan class="cc">    </tspan><tspan class="value">Monday</tspan>        :<tspan class="cc"> ................................................................................................................ </tspan></tspan>
+<tspan x="970" y="370" text-anchor="end"><tspan class="value">0.9 avg</tspan></tspan>
+
+<tspan x="390" y="390"><tspan class="cc">    </tspan><tspan class="value">Tuesday</tspan>        :<tspan class="cc"> ................................................................................................................ </tspan></tspan>
+<tspan x="970" y="390" text-anchor="end"><tspan class="value">1.0 avg</tspan></tspan>
+
+<tspan x="390" y="410"><tspan class="cc">    </tspan><tspan class="value">Wednesday</tspan>   :<tspan class="cc"> ............................................................................................................... </tspan></tspan>
+<tspan x="970" y="410" text-anchor="end"><tspan class="value">0.9 avg</tspan></tspan>
+
+<tspan x="390" y="430"><tspan class="cc">    </tspan><tspan class="value">Thursday</tspan>       :<tspan class="cc"> ................................................................................................................ </tspan></tspan>
+<tspan x="970" y="430" text-anchor="end"><tspan class="value">1.2 avg</tspan></tspan>
+
+<tspan x="390" y="450"><tspan class="cc">    </tspan><tspan class="value">Friday</tspan>            :<tspan class="cc"> ................................................................................................................ </tspan></tspan>
+<tspan x="970" y="450" text-anchor="end"><tspan class="value">1.5 avg</tspan></tspan>
+
+<tspan x="390" y="470"><tspan class="cc">    </tspan><tspan class="value">Saturday</tspan>       :<tspan class="cc"> ................................................................................................................. </tspan></tspan>
+<tspan x="970" y="470" text-anchor="end"><tspan class="value">1.4 avg</tspan></tspan>
+
+<tspan x="390" y="490"><tspan class="cc">    </tspan><tspan class="value">Sunday</tspan>          :<tspan class="cc"> ................................................................................................................ </tspan></tspan>
+<tspan x="970" y="490" text-anchor="end"><tspan class="value">0.7 avg</tspan></tspan>
+
+<tspan x="390" y="510"><tspan class="cc">. </tspan></tspan>
+</text>
+
+<!-- Contribution Streaks Section -->
+<text x="390" y="530" fill="#c9d1d9">
+<tspan x="390">- Contribution Streaks</tspan>
+</text>
+<text x="970" y="530" fill="#c9d1d9" text-anchor="end">
+<tspan x="970">————————————————————————-—-</tspan>
+</text>
+
+<text fill="#c9d1d9">
+<tspan x="390" y="550"><tspan class="cc">. </tspan><tspan class="key">Current streak</tspan>:<tspan class="cc"> ...................................................................................................... </tspan></tspan>
+<tspan x="970" y="550" text-anchor="end"><tspan class="value">4 days</tspan></tspan>
+
+<tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Longest streak</tspan>:<tspan class="cc"> ...................................................................................................... </tspan></tspan>
+<tspan x="970" y="570" text-anchor="end"><tspan class="value">18 days</tspan></tspan>
+
+<tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">Average commits/day</tspan>:<tspan class="cc"> ........................................................................................ </tspan></tspan>
+<tspan x="970" y="590" text-anchor="end"><tspan class="value">1.08</tspan></tspan>
+
+<tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Total contributions</tspan>:<tspan class="cc"> ............................................................................................... </tspan></tspan>
+<tspan x="970" y="610" text-anchor="end"><tspan class="value">332</tspan></tspan>
+
+<tspan x="390" y="630"><tspan class="cc">. </tspan></tspan>
+</text>
+
+<!-- Yearly Contribution Trend Section -->
+<text x="390" y="650" fill="#c9d1d9">
+<tspan x="390">- Yearly Contribution Trend</tspan>
+</text>
+<text x="970" y="650" fill="#c9d1d9" text-anchor="end">
+<tspan x="970">—————————————————————---—-</tspan>
+</text>
+
+<text fill="#c9d1d9">
+<tspan x="390" y="670"><tspan class="cc">. </tspan><tspan class="value">2021</tspan>:<tspan class="cc"> ......... </tspan></tspan>
+<tspan x="970" y="670" text-anchor="end"><tspan class="value">10 commits</tspan></tspan>
+
+<tspan x="390" y="690"><tspan class="cc">. </tspan><tspan class="value">2022</tspan>:<tspan class="cc"> ........ </tspan></tspan>
+<tspan x="970" y="690" text-anchor="end"><tspan class="value">101 commits (+910.0%)</tspan></tspan>
+
+<tspan x="390" y="710"><tspan class="cc">. </tspan><tspan class="value">2023</tspan>:<tspan class="cc"> ........ </tspan></tspan>
+<tspan x="970" y="710" text-anchor="end"><tspan class="value">22 commits (-78.2%)</tspan></tspan>
+
+<tspan x="390" y="730"><tspan class="cc">. </tspan><tspan class="value">2024</tspan>:<tspan class="cc"> ........ </tspan></tspan>
+<tspan x="970" y="730" text-anchor="end"><tspan class="value">173 commits (+686.4%)</tspan></tspan>
+
+<tspan x="390" y="750"><tspan class="cc">. </tspan><tspan class="value">2025</tspan>:<tspan class="cc"> ........ </tspan></tspan>
+<tspan x="970" y="750" text-anchor="end"><tspan class="value">332 commits (+91.9%)</tspan></tspan>
+</text>
+</svg>
