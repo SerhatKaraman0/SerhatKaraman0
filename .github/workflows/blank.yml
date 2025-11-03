@@ -2,12 +2,18 @@ name: Github Readme Creater Workflow
 
 on: workflow_dispatch # [workflow_dispatch, repository_dispatch, schedule, workflow_call]
 
+permissions:
+  contents: write
+
 jobs: 
   first-job: 
     runs-on: ubuntu-latest
     steps:
       - name: Get Code 
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: true
       - name: "Set up Python"
         uses: actions/setup-python@v6
         with:
@@ -34,3 +40,4 @@ jobs:
           author_email: serhatkaramanworkmail@gmail.com
           message: 'Updated profile Readme'
           add: '.'
+          token: ${{ secrets.ACCESS_TOKEN }}
