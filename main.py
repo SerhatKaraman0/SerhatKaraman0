@@ -618,7 +618,7 @@ def main():
     age_str = f"{years} years, {days} days"
 
     svg_overwrite(
-        filename='profile-card.svg',
+        filename='profile-card-github.svg',
         age_data=age_str,
         commit_data=commit_data,
         star_data=star_data,
