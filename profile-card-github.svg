@@ -55,7 +55,7 @@ text, tspan {white-space: pre;}
 <tspan x="970" y="70" text-anchor="end"><tspan class="value" id="location_data">Turkey</tspan></tspan>
 
 <tspan x="390" y="90"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .............................. </tspan></tspan>
-<tspan x="990" y="90" text-anchor="end"><tspan class="value" id="uptime_data">22 years, 149 days</tspan></tspan>
+<tspan x="990" y="90" text-anchor="end"><tspan class="value" id="uptime_data">22 years, 150 days</tspan></tspan>
   
 <tspan x="390" y="110"><tspan class="cc">. </tspan><tspan class="key">Role</tspan>:<tspan class="cc"> ................................ </tspan></tspan>
 <tspan x="970" y="110" text-anchor="end"><tspan class="value">Software Developer</tspan></tspan>
@@ -86,7 +86,7 @@ text, tspan {white-space: pre;}
 
 <text fill="#c9d1d9">
 <tspan x="390" y="310"><tspan class="cc">. </tspan><tspan class="key">Most productive</tspan>:<tspan class="cc" id="most_productive_dots" /></tspan>
-<tspan x="970" y="310" text-anchor="end"><tspan class="value" id="most_productive">Monday (1.75 avg)</tspan></tspan>
+<tspan x="970" y="310" text-anchor="end"><tspan class="value" id="most_productive">Monday (1.77 avg)</tspan></tspan>
 
 <tspan x="390" y="330"><tspan class="cc">. </tspan><tspan class="key">Least productive</tspan>:<tspan class="cc" id="least_productive_dots" /></tspan>
 <tspan x="970" y="330" text-anchor="end"><tspan class="value" id="least_productive">Sunday (0.73 avg)</tspan></tspan>
@@ -94,10 +94,10 @@ text, tspan {white-space: pre;}
 <tspan x="390" y="350"><tspan class="cc">. </tspan><tspan class="key">Weekly breakdown</tspan>:<tspan class="cc" /></tspan>
 
 <tspan x="390" y="370"><tspan class="cc">    </tspan><tspan class="value">Monday</tspan>      :<tspan class="cc" id="monday_avg_dots" /></tspan>
-<tspan x="970" y="370" text-anchor="end"><tspan class="value" id="monday_avg">1.75 avg</tspan></tspan>
+<tspan x="970" y="370" text-anchor="end"><tspan class="value" id="monday_avg">1.77 avg</tspan></tspan>
 
 <tspan x="390" y="390"><tspan class="cc">    </tspan><tspan class="value">Tuesday</tspan>     :<tspan class="cc" id="tuesday_avg_dots" /></tspan>
-<tspan x="970" y="390" text-anchor="end"><tspan class="value" id="tuesday_avg">1.02 avg</tspan></tspan>
+<tspan x="970" y="390" text-anchor="end"><tspan class="value" id="tuesday_avg">1.0 avg</tspan></tspan>
 
 <tspan x="390" y="410"><tspan class="cc">    </tspan><tspan class="value">Wednesday</tspan>   :<tspan class="cc" id="wednesday_avg_dots" /></tspan>
 <tspan x="970" y="410" text-anchor="end"><tspan class="value" id="wednesday_avg">0.91 avg</tspan></tspan>
@@ -136,7 +136,7 @@ text, tspan {white-space: pre;}
 <tspan x="970" y="590" text-anchor="end"><tspan class="value" id="average_per_day">1.23</tspan></tspan>
 
 <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Total contributions</tspan> :<tspan class="cc" id="total_contributions_dots" /></tspan>
-<tspan x="970" y="610" text-anchor="end"><tspan class="value" id="total_contributions">378</tspan></tspan>
+<tspan x="970" y="610" text-anchor="end"><tspan class="value" id="total_contributions">379</tspan></tspan>
 
 <tspan x="390" y="630"><tspan class="cc">. </tspan></tspan>
 </text>
@@ -163,7 +163,7 @@ text, tspan {white-space: pre;}
 <tspan x="970" y="730" text-anchor="end"><tspan class="value" id="year_2024">173 commits (+686.4%)</tspan></tspan>
 
 <tspan x="390" y="750"><tspan class="cc">. </tspan><tspan class="value">2025</tspan>:<tspan class="cc"> ........................... </tspan></tspan>
-<tspan x="970" y="750" text-anchor="end"><tspan class="value" id="year_2025">378 commits (+118.5%)</tspan></tspan>
+<tspan x="970" y="750" text-anchor="end"><tspan class="value" id="year_2025">379 commits (+119.1%)</tspan></tspan>
 
 <tspan x="390" y="770"><tspan class="cc">. </tspan><tspan class="value">Credits</tspan>:<tspan class="cc"> ........................ </tspan></tspan>
 <tspan x="990" y="770" text-anchor="end"><tspan class="value">           Andrew6rant</tspan></tspan>
