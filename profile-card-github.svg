@@ -55,7 +55,7 @@ text, tspan {white-space: pre;}
 <tspan x="970" y="70" text-anchor="end"><tspan class="value" id="location_data">Turkey</tspan></tspan>
 
 <tspan x="390" y="90"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .............................. </tspan></tspan>
-<tspan x="990" y="90" text-anchor="end"><tspan class="value" id="uptime_data">22 years, 207 days</tspan></tspan>
+<tspan x="990" y="90" text-anchor="end"><tspan class="value" id="uptime_data">22 years, 208 days</tspan></tspan>
   
 <tspan x="390" y="110"><tspan class="cc">. </tspan><tspan class="key">Role</tspan>:<tspan class="cc"> ................................ </tspan></tspan>
 <tspan x="970" y="110" text-anchor="end"><tspan class="value">Software Developer</tspan></tspan>
@@ -71,8 +71,8 @@ text, tspan {white-space: pre;}
 
 <tspan x="390" y="200">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
 <tspan x="390" y="220" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">65</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">73</tspan>}  | <tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> ............. </tspan><tspan class="value" id="star_data">9</tspan>
-<tspan x="390" y="240" class="cc">. </tspan><tspan class="key">Commmits</tspan>:<tspan class="cc" id="commit_data_dots"> ................... </tspan><tspan class="value" id="commit_data">633</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ........ </tspan><tspan class="value" id="follower_data">32</tspan>
-<tspan x="390" y="260" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc" id="loc_data_dots" /><tspan class="value" id="loc_data">10,995,887</tspan>(<tspan class="addColor" id="loc_add">12,691,687</tspan><tspan class="addColor">++</tspan>, <tspan id="loc_del_dots" /><tspan class="delColor" id="loc_del">1,695,800</tspan><tspan class="delColor">--</tspan>)
+<tspan x="390" y="240" class="cc">. </tspan><tspan class="key">Commmits</tspan>:<tspan class="cc" id="commit_data_dots"> ................... </tspan><tspan class="value" id="commit_data">634</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ........ </tspan><tspan class="value" id="follower_data">32</tspan>
+<tspan x="390" y="260" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc" id="loc_data_dots" /><tspan class="value" id="loc_data">10,995,887</tspan>(<tspan class="addColor" id="loc_add">12,691,698</tspan><tspan class="addColor">++</tspan>, <tspan id="loc_del_dots" /><tspan class="delColor" id="loc_del">1,695,811</tspan><tspan class="delColor">--</tspan>)
 
 </text>
 
@@ -86,33 +86,33 @@ text, tspan {white-space: pre;}
 
 <text fill="#c9d1d9">
 <tspan x="390" y="310"><tspan class="cc">. </tspan><tspan class="key">Most productive</tspan>:<tspan class="cc" id="most_productive_dots" /></tspan>
-<tspan x="970" y="310" text-anchor="end"><tspan class="value" id="most_productive">Saturday (1.75 avg)</tspan></tspan>
+<tspan x="970" y="310" text-anchor="end"><tspan class="value" id="most_productive">Monday (0 avg)</tspan></tspan>
 
 <tspan x="390" y="330"><tspan class="cc">. </tspan><tspan class="key">Least productive</tspan>:<tspan class="cc" id="least_productive_dots" /></tspan>
-<tspan x="970" y="330" text-anchor="end"><tspan class="value" id="least_productive">Sunday (0.83 avg)</tspan></tspan>
+<tspan x="970" y="330" text-anchor="end"><tspan class="value" id="least_productive">Sunday (0 avg)</tspan></tspan>
 
 <tspan x="390" y="350"><tspan class="cc">. </tspan><tspan class="key">Weekly breakdown</tspan>:<tspan class="cc" /></tspan>
 
 <tspan x="390" y="370"><tspan class="cc">    </tspan><tspan class="value">Monday</tspan>      :<tspan class="cc" id="monday_avg_dots" /></tspan>
-<tspan x="970" y="370" text-anchor="end"><tspan class="value" id="monday_avg">1.71 avg</tspan></tspan>
+<tspan x="970" y="370" text-anchor="end"><tspan class="value" id="monday_avg">0 avg</tspan></tspan>
 
 <tspan x="390" y="390"><tspan class="cc">    </tspan><tspan class="value">Tuesday</tspan>     :<tspan class="cc" id="tuesday_avg_dots" /></tspan>
-<tspan x="970" y="390" text-anchor="end"><tspan class="value" id="tuesday_avg">1.08 avg</tspan></tspan>
+<tspan x="970" y="390" text-anchor="end"><tspan class="value" id="tuesday_avg">0 avg</tspan></tspan>
 
 <tspan x="390" y="410"><tspan class="cc">    </tspan><tspan class="value">Wednesday</tspan>   :<tspan class="cc" id="wednesday_avg_dots" /></tspan>
-<tspan x="970" y="410" text-anchor="end"><tspan class="value" id="wednesday_avg">0.96 avg</tspan></tspan>
+<tspan x="970" y="410" text-anchor="end"><tspan class="value" id="wednesday_avg">0 avg</tspan></tspan>
 
 <tspan x="390" y="430"><tspan class="cc">    </tspan><tspan class="value">Thursday</tspan>    :<tspan class="cc" id="thursday_avg_dots" /></tspan>
-<tspan x="970" y="430" text-anchor="end"><tspan class="value" id="thursday_avg">1.15 avg</tspan></tspan>
+<tspan x="970" y="430" text-anchor="end"><tspan class="value" id="thursday_avg">0.0 avg</tspan></tspan>
 
 <tspan x="390" y="450"><tspan class="cc">    </tspan><tspan class="value">Friday</tspan>      :<tspan class="cc" id="friday_avg_dots" /></tspan>
-<tspan x="970" y="450" text-anchor="end"><tspan class="value" id="friday_avg">1.52 avg</tspan></tspan>
+<tspan x="970" y="450" text-anchor="end"><tspan class="value" id="friday_avg">0 avg</tspan></tspan>
 
 <tspan x="390" y="470"><tspan class="cc">    </tspan><tspan class="value">Saturday</tspan>    :<tspan class="cc" id="saturday_avg_dots" /></tspan>
-<tspan x="970" y="470" text-anchor="end"><tspan class="value" id="saturday_avg">1.75 avg</tspan></tspan>
+<tspan x="970" y="470" text-anchor="end"><tspan class="value" id="saturday_avg">0 avg</tspan></tspan>
 
 <tspan x="390" y="490"><tspan class="cc">    </tspan><tspan class="value">Sunday</tspan>      :<tspan class="cc" id="sunday_avg_dots" /></tspan>
-<tspan x="970" y="490" text-anchor="end"><tspan class="value" id="sunday_avg">0.83 avg</tspan></tspan>
+<tspan x="970" y="490" text-anchor="end"><tspan class="value" id="sunday_avg">0 avg</tspan></tspan>
 
 <tspan x="390" y="510"><tspan class="cc">. </tspan></tspan>
 </text>
@@ -127,16 +127,16 @@ text, tspan {white-space: pre;}
 
 <text fill="#c9d1d9">
 <tspan x="390" y="550"><tspan class="cc">. </tspan><tspan class="key">Current streak</tspan>      :<tspan class="cc" id="current_streak_dots" /></tspan>
-<tspan x="970" y="550" text-anchor="end"><tspan class="value" id="current_streak">61 days</tspan></tspan>
+<tspan x="970" y="550" text-anchor="end"><tspan class="value" id="current_streak">0 days</tspan></tspan>
 
 <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Longest streak</tspan>      :<tspan class="cc" id="longest_streak_dots" /></tspan>
-<tspan x="970" y="570" text-anchor="end"><tspan class="value" id="longest_streak">61 days</tspan></tspan>
+<tspan x="970" y="570" text-anchor="end"><tspan class="value" id="longest_streak">0 days</tspan></tspan>
 
 <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">Average commits/day</tspan> :<tspan class="cc" id="average_per_day_dots" /></tspan>
-<tspan x="970" y="590" text-anchor="end"><tspan class="value" id="average_per_day">1.28</tspan></tspan>
+<tspan x="970" y="590" text-anchor="end"><tspan class="value" id="average_per_day">0.0</tspan></tspan>
 
 <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Total contributions</tspan> :<tspan class="cc" id="total_contributions_dots" /></tspan>
-<tspan x="970" y="610" text-anchor="end"><tspan class="value" id="total_contributions">469</tspan></tspan>
+<tspan x="970" y="610" text-anchor="end"><tspan class="value" id="total_contributions">0</tspan></tspan>
 
 <tspan x="390" y="630"><tspan class="cc">. </tspan></tspan>
 </text>
@@ -163,7 +163,7 @@ text, tspan {white-space: pre;}
 <tspan x="970" y="730" text-anchor="end"><tspan class="value" id="year_2024">173 commits (+686.4%)</tspan></tspan>
 
 <tspan x="390" y="750"><tspan class="cc">. </tspan><tspan class="value">2025</tspan>:<tspan class="cc"> ........................... </tspan></tspan>
-<tspan x="970" y="750" text-anchor="end"><tspan class="value" id="year_2025">469 commits (+171.1%)</tspan></tspan>
+<tspan x="970" y="750" text-anchor="end"><tspan class="value" id="year_2025">470 commits (+171.7%)</tspan></tspan>
 
 <tspan x="390" y="770"><tspan class="cc">. </tspan><tspan class="value">Credits</tspan>:<tspan class="cc"> ........................ </tspan></tspan>
 <tspan x="990" y="770" text-anchor="end"><tspan class="value">           Andrew6rant</tspan></tspan>
